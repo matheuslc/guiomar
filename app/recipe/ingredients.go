@@ -5,7 +5,7 @@ type ingredients []Ingredient
 
 // Ingredients defines what an collection of ingredients can do
 type Ingredients interface {
-	Add(Ingredient) ingredients
+	Add(Ingredient) Ingredients
 	First() Ingredient
 }
 
@@ -16,7 +16,7 @@ func NewIngredients() Ingredients {
 }
 
 // Add adds a new ingredient to the list
-func (is ingredients) Add(i Ingredient) ingredients {
+func (is ingredients) Add(i Ingredient) Ingredients {
 	return append(is, i)
 }
 
